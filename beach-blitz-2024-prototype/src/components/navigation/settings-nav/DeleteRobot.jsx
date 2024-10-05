@@ -1,149 +1,62 @@
 import React, { Suspense, useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Pressable, Image, ScrollView } from 'react-native';
+import { useNavigate } from 'react-router-dom';
 import DeleteRobotSkeleton from '../../settings/DeleteRobotSkeleton';
 import { Entypo } from '../../../index.js';
 import axios from 'axios';
+import './DeleteRobot.css';
 
-export default function DeleteRobot({ navigation }) {
+export default function DeleteRobot() {
+  const navigate = useNavigate();
+  const tImg = require('../../assets/images/robbie-transparent.png'); // template image
+  const [robotList, setRobotList] = useState([]);
 
-    const tImg = require('../../assets/images/robbie-transparent.png'); //template image
+  useEffect(() => {
+    axios.get('http://10.0.2.2:3000/robotList') // imports data using axios
+      .then((response) => { // sets robotList to the data
+        setRobotList(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [setRobotList]); // Updates on page load and when setRobotList changes
 
-    const [robotList, setRobotList] = useState([]);
+  const removeRobot = async (teamNumber) => {
+    // remove robot from robotList and update list on screen
+    await axios.get(`http://10.0.2.2:3000/removeRobot/${teamNumber}`);
+    let newList = await axios.get('http://10.0.2.2:3000/robotList');
+    setRobotList((prev) => newList.data);
+  };
 
-    useEffect(() => {
-      axios.get('http://10.0.2.2:3000/robotList') //imports data using axios
-        .then((response) => { //sets robotList to the data
-          setRobotList(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-    });
+  const displayData = robotList.map((robot) =>
+    <div key={robot.robotID} className="teamSelection" onClick={() => removeRobot(robot.profile.teamNumber)}>
+      <div className="teamName">
+        <span>{robot.profile.teamNumber} - {robot.profile.teamName}</span>
+      </div>
+      <img src={tImg} className="teamImage" alt="Robot" />
+    </div>
+  );
 
-    }, [setRobotList]); //Updates on page load and when setRobotList changes
-
-    const removeRobot = async (teamNumber) => {
-
-      // remove robot from robotList and update list on screen
-      await axios.get(`http://10.0.2.2:3000/removeRobot/${teamNumber}`);
-        let newList = await axios.get('http://10.0.2.2:3000/robotList');
-        setRobotList((prev) => newList.data);
-    };
-
-    const displayData = robotList.map((robot) =>
-        <Pressable onPress={() => removeRobot(robot.profile.teamNumber)}>
-          <View key={robot.robotID} style={styles.teamSelection}>
-              <View style={styles.teamName}>
-                  <Text>{robot.profile.teamNumber} - {robot.profile.teamName}</Text>
-              </View>
-              <Image source={tImg} style={styles.teamImage} />
-          </View>
-        </Pressable>
-    );
-
-    return (
+  return (
     <>
-      <View style={styles.container}>
-        <View style={styles.topPiece} />
-        <View style={styles.middlePiece}>
-          <View style={styles.titleContainer}>
-            <Pressable onPress={() => navigation.navigate('SettingsPanel')}>
+      <div className="container">
+        <div className="topPiece" />
+        <div className="middlePiece">
+          <div className="titleContainer">
+            <button onClick={() => navigate('/settings-panel')}>
               <Entypo name={'chevron-left'} size={30} color={'#616161'} />
-            </Pressable>
-            <Text style={styles.title}>Select Robot to Delete</Text>
-          </View>
+            </button>
+            <span className="title">Select Robot to Delete</span>
+          </div>
 
-          <Text style={styles.subText}>This action CANNOT BE UNDONE. DO NOT CLICK PROFILES YOU DO NOT WANT TO DELETE.</Text>
+          <span className="subText">This action CANNOT BE UNDONE. DO NOT CLICK PROFILES YOU DO NOT WANT TO DELETE.</span>
 
-          <ScrollView style={styles.robotListContainer}>
-            <Suspense fallback={ <DeleteRobotSkeleton/> }>
+          <div className="robotListContainer">
+            <Suspense fallback={<DeleteRobotSkeleton />}>
               {displayData}
             </Suspense>
-          </ScrollView>
-
-        </View>
-      </View>
+          </div>
+        </div>
+      </div>
     </>
-    );
+  );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      backgroundColor: 'white',
-      width: '100%',
-      height: '100%',
-
-      alignItems: 'center',
-      flexDirection: 'column',
-    },
-    topPiece: {
-      width: '100%',
-      height: '8%',
-      backgroundColor: '#E1584B',
-    },
-    middlePiece: {
-      width: '90%',
-      maxHeight: '84%',
-      backgroundColor: 'white',
-
-      paddingTop: 20,
-      paddingBottom: 20,
-      gap: 30,
-      alignItems: 'center',
-    },
-    titleContainer: {
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-    },
-    title: {
-      fontSize: 17,
-      color: '#616161',
-    },
-    subText: {
-      color: '#616161',
-      textAlign: 'center',
-      width: '100%',
-    },
-    button: {
-      width:'90%',
-      height:'7%',
-      backgroundColor: '#E1584B',
-
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    buttonText: {
-      fontSize: 20,
-      color: 'white',
-    },
-    viewSelection: {
-    width: '100%',
-    maxHeight: '71%',
-    },
-    teamSelection: {
-      width: '100%',
-      minHeight: 70,
-      backgroundColor: 'white',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      flexDirection: 'row',
-      borderColor: '#616161',
-      borderWidth: 1,
-      paddingHorizontal: 10,
-      marginBottom: '5%',
-    },
-    teamName: {
-      minHeight: 50,
-    },
-    teamImage: {
-      width: 50,
-      height: 50,
-    },
-    robotListContainer: {
-      width:'100%',
-    },
-  }
-);
-

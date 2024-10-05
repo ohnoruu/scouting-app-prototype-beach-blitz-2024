@@ -1,0 +1,101 @@
+.container {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topPiece {
+    width: 100%;
+    height: 7.5%;
+    background-color: #E1584B;
+}
+
+.mainContent {
+    height: 65%;
+    max-width: 90%;
+}
+
+.mainContentText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    gap: 60px;
+}
+
+.heroText {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.infoText {
+    font-size: 25px;
+    color: black;
+    max-width: 90%;
+    text-align: center;
+}
+
+.continueButton {
+    border-radius: 2px;
+    background-color: #E1584B;
+    border: 1px solid black;
+    width: 150px;
+    font-size: 20px;
+    padding: 15px 40px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mainContentImage {
+    height: 30%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.floor {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+    bottom: 0;
+}
+
+.robbie {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    z-index: 3;
+    right: 0;
+    top: -15px;
+}
+
+.credits {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    z-index: 4;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.creditsText {
+    font-size: 20px;
+    z-index: 4;
+    font-weight: bold;
+    color: white;
+}
+
+.FIRSTlogo {
+    width: 35px;
+    height: 30px;
+    z-index: 4;
+}

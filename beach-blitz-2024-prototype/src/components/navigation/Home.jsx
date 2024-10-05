@@ -1,162 +1,67 @@
-import React, { useEffect, useState} from 'react';
-import { View, Text, StyleSheet, Pressable, Image, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import StatGlimpse from '../home/StatGlimpse';
 import informationIcon from '../../assets/interface-icons/info.png';
-
 import axios from 'axios';
+import './Home.css';
 
-export default function Home({ navigation }) {
-
+export default function Home() {
+  const navigate = useNavigate();
   const [robotList, alterRobotList] = useState();
+  const [closeInfo, setCloseInfo] = useState(false);
 
   useEffect(() => {
     axios.get('http://10.0.2.2:3000/robotList')
-    .then((response) => {
-      alterRobotList(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-
+      .then((response) => {
+        alterRobotList(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
-  const [closeInfo, setCloseInfo] = useState(false);
-
-  let manageCloseInfo = () => {
-    setCloseInfo((prev) => true);
+  const manageCloseInfo = () => {
+    setCloseInfo(true);
   };
 
   return (
     <>
-      <View style={styles.container}>
-        <View style={styles.topPiece} />
+      <div className="container">
+        <div className="topPiece" />
 
-        <View style={styles.middlePiece}>
+        <div className="middlePiece">
+          {!closeInfo && (
+            <div className="getStarted">
+              <span className="header">Get Started Scouting</span>
 
-          {closeInfo ? <></> :
-            <View style={styles.getStarted}>
-              <Text style={styles.header}>Get Started Scouting</Text>
+              <div className="important">
+                <div className="importantHero">
+                  <img className="importantIconImage" alt="important icon" src={informationIcon} />
+                  <span className="headerSmaller">Important</span>
+                </div>
 
-              <View style={styles.important}>
-                <View style={styles.importantHero}>
-                  <Image style={styles.importantIconImage} alt="important icon" source={informationIcon} />
-                  <Text style={styles.headerSmaller}>Important</Text>
-                </View>
+                <span className="importantText">Scouting is the process of recording data for strategy, so take note!</span>
 
-                <Text style={styles.importantText}>Scouting is the process of recording data for strategy, so take note!</Text>
+                <button onClick={manageCloseInfo} className="hyperlinkButton">
+                  <span className="hyperlink">Let's Get Going!</span>
+                </button>
+              </div>
+            </div>
+          )}
 
-                <Pressable onPress={manageCloseInfo}>
-                  <Text style={styles.hyperlink}>Let's Get Going!</Text>
-                </Pressable>
-              </View>
-            </View>}
-
-            <View style={styles.viewScoutingData}>
-              <Text style={styles.header}>View Scouting Data</Text>
-              <ScrollView style={styles.scoutingDataGlimpses}>
-
-                {robotList?.map((robot) =>
-
-                  <Pressable key={robot.profile.teamNumber}>
-                     <StatGlimpse name={robot.profile.teamName} teamNumber={robot.profile.teamNumber} driveBase={robot.profile.driveBase} intake={robot.profile.intake} />
-                  </Pressable>
-
-                )}
-
-              </ScrollView>
-
-              <Text style={styles.text2}>For more information of all teams, click on the search icon</Text>
-            </View>
-
-          </View>
-      </View>
+          <div className="viewScoutingData">
+            <span className="header">View Scouting Data</span>
+            <div className="scoutingDataGlimpses">
+              {robotList?.map((robot) => (
+                <button key={robot.profile.teamNumber} className="statGlimpseButton">
+                  <StatGlimpse name={robot.profile.teamName} teamNumber={robot.profile.teamNumber} driveBase={robot.profile.driveBase} intake={robot.profile.intake} />
+                </button>
+              ))}
+            </div>
+            <span className="text2">For more information of all teams, click on the search icon</span>
+          </div>
+        </div>
+      </div>
     </>
- );
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    width: '100%',
-    height: '100%',
-
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
-  topPiece: {
-    width: '100%',
-    height: '8%',
-    backgroundColor: '#E1584B',
-  },
-  middlePiece: {
-    width: '90%',
-    maxHeight: '84%',
-    backgroundColor: 'white',
-
-    paddingTop: 20,
-    paddingBottom: 20,
-    gap: 30,
-    alignItems: 'center',
-  },
-  getStarted: {
-    minHeight: '15%',
-    width: '100%',
-    gap: 10,
-  },
-  viewScoutingData: {
-    width: '100%',
-    maxHeight: '84%',
-    gap: 10,
-  },
-  scoutingDataGlimpses: {
-    maxHeight: '83%',
-  },
-  bottomPiece: {
-    width: '100%',
-    height: '8%',
-    backgroundColor: '#E1584B',
-  },
-  header: {
-    color: '#616161',
-    fontSize: 17,
-  },
-  headerSmaller: {
-    color: '#616161',
-    fontSize: 14,
-  },
-  text: {
-    color: '#616161',
-    fontSize: 12,
-  },
-  text2: {
-    color: '#616161',
-    fontSize: 14.05,
-  },
-  hyperlink: {
-    color: '#82d0f6',
-    fontSize: 11.5,
-  },
-
-  important: {
-    maxWidth: '100%',
-    maxHeight: '100%',
-    backgroundColor: '#e9ebee',
-    borderRadius: 5,
-    gap: 5,
-    padding: 10,
-    justifyContent: 'space-between',
-  },
-  importantHero: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-  },
-  importantText: {
-    color: '#616161',
-    fontSize: 12,
-  },
-  importantIconImage: {
-    width: 15,
-    height: 15,
-  },
-});

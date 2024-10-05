@@ -1,0 +1,11 @@
+.teamSelection {
+    width: 100%;
+    min-height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border: 2.5px solid lightgrey;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    gap: 2.5px;
+}

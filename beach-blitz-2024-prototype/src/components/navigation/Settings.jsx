@@ -1,30 +1,18 @@
-import { React } from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import PasswordPrompt from './settings-nav/PasswordPrompt';
 import SettingsPanel from './settings-nav/SettingsPanel';
 import DeleteRobot from './settings-nav/DeleteRobot';
 
-
-export default function Record() {
-
-  const Stack = createNativeStackNavigator();
-
+export default function Settings() {
   return (
-    <Stack.Navigator
-      screenOptions=
-      {
-        {
-          headerShown: false,
-          animation: 'none',
-        }
-      }
-    >
-
-      <Stack.Screen name="PasswordPrompt" component={PasswordPrompt} />
-      <Stack.Screen name="SettingsPanel" component={SettingsPanel} />
-      <Stack.Screen name="DeleteRobot" component={DeleteRobot} />
-
-    </Stack.Navigator>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PasswordPrompt />} />
+        <Route path="/settings-panel" element={<SettingsPanel />} />
+        <Route path="/delete-robot" element={<DeleteRobot />} />
+      </Routes>
+    </Router>
   );
 }

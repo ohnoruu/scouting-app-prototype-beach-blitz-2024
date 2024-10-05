@@ -1,0 +1,24 @@
+.border {
+    width: 100%;
+    min-height: 70px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2.5px solid lightgrey;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    gap: 2.5px;
+  }
+  
+  .bigText {
+    background-color: lightgrey;
+    width: 100px;
+    min-height: 15px;
+  }
+  
+  .smallText {
+    background-color: lightgrey;
+    width: 50px;
+    min-height: 15px;
+  }

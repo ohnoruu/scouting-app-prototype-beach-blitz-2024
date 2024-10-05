@@ -1,0 +1,29 @@
+.teamSelection {
+    width: 100%;
+    min-height: 70px;
+    background-color: white;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    border-color: #616161;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px;
+    margin-bottom: 5%;
+  }
+  
+  .teamName {
+    height: 20px;
+    width: 180px;
+    background-color: lightgray;
+  }
+  
+  .teamImage {
+    width: 50px;
+    height: 50px;
+    background-color: lightgray;
+  }
+  
+  .robotListContainer {
+    width: 100%;
+  }

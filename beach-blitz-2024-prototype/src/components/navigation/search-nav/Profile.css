@@ -1,0 +1,72 @@
+.container {
+    width: '100%';
+    height: '100%';
+    gap: 20px;
+    background-color: white;
+  }
+  
+  .topPiece {
+    height: 8%;
+    background-color: #E1584B;
+  }
+  
+  .buttonPiece {
+    width: 100%;
+    margin-left: 20px;
+  }
+  
+  .middlePieceContainer {
+    width: 100%;
+    align-items: center;
+    max-height: 93.5%;
+  }
+  
+  .middlePiece {
+    width: 90%;
+    gap: 20px;
+  }
+  
+  .teamMain {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    max-height: 150px;
+  }
+  
+  .image {
+    max-width: 55%;
+    max-height: 100px;
+  }
+  
+  .robotDetails {
+    gap: 5px;
+  }
+  
+  .matchSection {
+    gap: 100px;
+    overflow-y: auto;
+  }
+  
+  .matches {
+    display: flex;
+    flex-direction: column;
+    border-width: 2.5px;
+    border-color: #C8C8C8;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .subText {
+    font-size: 12px;
+  }
+  
+  .header {
+    font-size: 20px;
+  }

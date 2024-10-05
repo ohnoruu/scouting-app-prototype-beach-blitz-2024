@@ -1,133 +1,67 @@
-import { React, useState, useEffect } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, Pressable } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Entypo } from '../../../index.js';
 import axios from 'axios';
+import './Profile.css';
 
-export default function Profile({ route, navigation }) {
+export default function Profile() {
+    const navigate = useNavigate();
+    const { teamNumber } = useParams();
     const [robotProfileData, setRobotProfileData] = useState();
 
-    // we are destructuring the teamNumber key from the route.params object
-    const { teamNumber } = route.params;
-
     useEffect(() => {
-        axios.get(`http://10.0.2.2:3000/getRobot/${teamNumber}}`)
+        axios.get(`http://10.0.2.2:3000/getRobot/${teamNumber}`)
         .then((response) => {
           setRobotProfileData(response.data);
         });
     }, [teamNumber]);
 
     return (
-        <View style={styles.container}>
-            <View style={styles.topPiece} />
+        <div className="container">
+            <div className="topPiece" />
 
-            <View style={styles.buttonPiece}>
-                <Entypo name={'chevron-left'} size={30} color={'#616161'} onPress={() => navigation.goBack()} />
-            </View>
+            <div className="buttonPiece">
+                <Entypo name={'chevron-left'} size={30} color={'#616161'} onClick={() => navigate(-1)} />
+            </div>
 
-            <View style={styles.middlePieceContainer}>
-                <View style={styles.middlePiece}>
+            <div className="middlePieceContainer">
+                <div className="middlePiece">
 
                 {robotProfileData && <>
-                    <View style={styles.teamMain}>
-                        <View style={styles.teamSubMain}>
-                            <Text style={styles.header}>{robotProfileData.profile.teamName}</Text>
-                            <Text style={styles.subText}>{robotProfileData.profile.teamNumber}</Text>
-                        </View>
+                    <div className="teamMain">
+                        <div className="teamSubMain">
+                            <span className="header">{robotProfileData.profile.teamName}</span>
+                            <span className="subText">{robotProfileData.profile.teamNumber}</span>
+                        </div>
 
-                        <Image style={styles.image}source={require('../../assets/interface-icons/filler-image.png')}/>
-                    </View>
+                        <img className="image" src={require('../../assets/interface-icons/filler-image.png')} alt="Robot" />
+                    </div>
 
-                    <View style={styles.robotDetails}>
-                        <Text style={styles.text}>Drivebase: {robotProfileData.profile.driveBase}</Text>
-                        <Text style={styles.text}>Autonomous: {robotProfileData.profile.autonomous.toString()}</Text>
-                        <Text style={styles.text}>Intake: {robotProfileData.profile.intake}</Text>
-                        <Text style={styles.text}>Additional Details: {robotProfileData.profile.additionalDetails}</Text>
-                    </View>
+                    <div className="robotDetails">
+                        <span className="text">Drivebase: {robotProfileData.profile.driveBase}</span>
+                        <span className="text">Autonomous: {robotProfileData.profile.autonomous.toString()}</span>
+                        <span className="text">Intake: {robotProfileData.profile.intake}</span>
+                        <span className="text">Additional Details: {robotProfileData.profile.additionalDetails}</span>
+                    </div>
                   </>
                 }
 
-                <ScrollView style={styles.matchSection}>
+                <div className="matchSection">
                     {robotProfileData?.matches?.map((match) =>
-                      <Pressable key={`${robotProfileData.profile.teamName} match ${match.matchNumber}`}
-                        onPress={() => navigation.navigate('MatchStats',
+                      <div key={`${robotProfileData.profile.teamName} match ${match.matchNumber}`}
+                        onClick={() => navigate('/match-stats', { state: { teamNumber: robotProfileData.profile.teamNumber, matchNumber: match.matchNumber } })}>
 
-                          // route robot team number and specific match to display in the matchstats component
-                          { teamNumber: robotProfileData.profile.teamNumber, matchNumber: match.matchNumber }
-                        )}>
+                          <div className="matches">
+                              <span className="text"> Match Number: {match.matchNumber} </span>
+                              <span className="text"> Match Type: {match.matchType} </span>
+                          </div>
 
-                          <View style={styles.matches}>
-                              <Text style={styles.text}> Match Number: {match.matchNumber} </Text>
-                              <Text style={styles.text}> Match Type: {match.matchType} </Text>
-                          </View>
-
-                      </Pressable>
+                      </div>
                     )}
-                </ScrollView>
+                </div>
 
-                </View>
-            </View>
-        </View>
+                </div>
+            </div>
+        </div>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      width: '100%',
-      height: '100%',
-      gap: 20,
-      backgroundColor: 'white',
-    },
-    topPiece: {
-      height: '8%',
-      backgroundColor: '#E1584B',
-    },
-    buttonPiece: {
-      width: '100%',
-      marginLeft: 20,
-    },
-    middlePieceContainer: {
-      width: '100%',
-      alignItems: 'center',
-      maxHeight: '93.5%',
-    },
-    middlePiece: {
-      width: '90%',
-      gap: 20,
-    },
-    teamMain: {
-      flexDirection: 'row',
-      gap: 20,
-      justifyContent: 'space-between',
-      maxHeight: 150,
-    },
-    image: {
-      maxWidth: '55%',
-      maxHeight: 100,
-    },
-    robotDetails:{
-      gap: 5,
-    },
-    matchSection:{
-      gap: 100,
-    },
-    matches:{
-      flexDirection: 'column',
-      borderWidth: 2.5,
-      borderColor: '#C8C8C8',
-      padding: 15,
-
-      marginTop: 10,
-      marginBottom: 10,
-    },
-    text: {
-      fontSize: 14,
-      width: '100%',
-    },
-    subText: {
-      fontSize: 12,
-    },
-    header: {
-      fontSize: 20,
-    },
-});
-
