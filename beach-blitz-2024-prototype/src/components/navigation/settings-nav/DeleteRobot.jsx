@@ -7,7 +7,7 @@ import './DeleteRobot.css';
 
 export default function DeleteRobot() {
   const navigate = useNavigate();
-  const tImg = require('../../assets/images/robbie-transparent.png'); // template image
+  const tImg = require('../../../assets/interface-icons/filler-image.png'); // template image
   const [robotList, setRobotList] = useState([]);
 
   useEffect(() => {

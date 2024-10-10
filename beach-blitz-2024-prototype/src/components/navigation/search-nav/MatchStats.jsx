@@ -38,7 +38,7 @@ export default function MatchStats() {
                                 <span className="header">{robotProfileData.profile.teamName}</span>
                                 <span className="subHeader">{robotProfileData.profile.teamNumber}</span>
                             </div>
-                            <img className="image" src={require('../../assets/interface-icons/filler-image.png')} alt="Robot" />
+                            <img className="image" src={require('../../../assets/interface-icons/filler-image.png')} alt="Robot" />
                         </div>
 
                         <div className="teamDesc">

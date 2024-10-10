@@ -34,7 +34,7 @@ export default function Profile() {
                             <span className="subText">{robotProfileData.profile.teamNumber}</span>
                         </div>
 
-                        <img className="image" src={require('../../assets/interface-icons/filler-image.png')} alt="Robot" />
+                        <img className="image" src={require('../../../assets/interface-icons/filler-image.png')} alt="Robot" />
                     </div>
 
                     <div className="robotDetails">
