@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Entypo } from '../../../index.js';
+//import { IonIcon } from '../../../index.js';
 import './MatchStats.css';
 
 export default function MatchStats() {
@@ -28,7 +28,7 @@ export default function MatchStats() {
             <div className="topPiece" />
             <div className="container">
                 <div className="buttonPiece">
-                    <Entypo name={'chevron-left'} size={30} color={'#616161'} onClick={() => navigate(-1)} />
+                    <img src="https://static.vecteezy.com/system/resources/previews/024/722/367/non_2x/fish-with-ai-generated-free-png.png"/>
                 </div>
 
                 {robotMatchData &&

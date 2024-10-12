@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Entypo } from '../../../index.js';
+//import { IonIcon } from '../../../index.js';
 import axios from 'axios';
 import './Profile.css';
 
@@ -21,7 +21,7 @@ export default function Profile() {
             <div className="topPiece" />
 
             <div className="buttonPiece">
-                <Entypo name={'chevron-left'} size={30} color={'#616161'} onClick={() => navigate(-1)} />
+                <img src="https://static.vecteezy.com/system/resources/previews/024/722/367/non_2x/fish-with-ai-generated-free-png.png" />
             </div>
 
             <div className="middlePieceContainer">

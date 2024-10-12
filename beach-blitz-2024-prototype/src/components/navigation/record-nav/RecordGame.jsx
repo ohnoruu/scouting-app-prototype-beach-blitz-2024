@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Entypo } from '../../../index.js';
+//import { IonIcon } from '../../../index.js';
 import Counter from '../../record/Counter.jsx';
 import CheckRecord from '../../record/CheckRecord.jsx';
 import './RecordGame.css';
@@ -61,7 +61,7 @@ export default function RecordGame({ route }) {
             <div className="topPiece" />
             <div className="middlePiece">
                 <div className="header">
-                    <Entypo name={'chevron-left'} size={30} color={'#616161'} onClick={() => navigate(-1)} />
+                    <img src="https://static.vecteezy.com/system/resources/previews/024/722/367/non_2x/fish-with-ai-generated-free-png.png"/>
                 </div>
                 <div className="scrollView">
                     <div className="row space-between">

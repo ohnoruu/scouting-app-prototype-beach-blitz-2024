@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AntDesign } from '../../../index.js';
+//import { SearchIcon } from '../../../index.js';
 import SearchRobotsSkeleton from '../../search/SearchRobotsSkeleton.jsx';
 import StatGlimpse from '../../home/StatGlimpse.jsx';
 import axios from 'axios';
@@ -27,7 +27,7 @@ export default function SearchRobots() {
         <div className="middlePiece">
           <span className="header">Get Started Scouting</span>
           <div className="searchSection">
-            <AntDesign className="searchIcon" name="search1" size={25} color={'black'} />
+            <img src="https://static.vecteezy.com/system/resources/previews/024/722/367/non_2x/fish-with-ai-generated-free-png.png" />
             <input
               className="searchbar"
               placeholder={'Search'}

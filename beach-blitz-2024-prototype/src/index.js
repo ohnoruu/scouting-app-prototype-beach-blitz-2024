@@ -10,11 +10,12 @@ export { default as Record } from './components/navigation/Record';
 export { default as Settings } from './components/navigation/Settings';
 
 // Export default icon types to use. Refer to https://oblador.github.io/react-native-vector-icons/
-export { EntypoHome, EntypoSearch, EntypoLeft } from 'react-icons/entypo';
-export { default as AntDesign } from 'react-icons/ai';
-export { default as FontAwesome } from 'react-icons/fa';
-export { default as MaterialCommunityIcons } from 'react-icons/md';
-export { default as Ionicons } from 'react-icons/io';
+/*
+export { SearchIcon } from '@ant-design/icons';
+export { FontAwesome } from '@react-icons/fa';
+export { MaterialCommunityIcons } from '@react-icons/md';
+export { IonIcon } from '@reacticons/ionicons';
+*/
 
 ReactDOM.render(
   <React.StrictMode>
