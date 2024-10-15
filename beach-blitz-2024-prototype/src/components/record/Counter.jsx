@@ -1,11 +1,11 @@
 import React from 'react';
-import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+//import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import './Counter.css';
 
 export default function Counter({ target, setTarget, style }) {
     return (
         <div className="counter-container">
-            <FaMinusCircle size={40} onClick={() => setTarget(prev => prev - 1)} />
+            <img src = '' />
             <input
                 type="text"
                 value={target.toString()}
@@ -20,7 +20,7 @@ export default function Counter({ target, setTarget, style }) {
                     }
                 }}
             />
-            <FaPlusCircle size={40} onClick={() => setTarget(prev => prev + 1)} />
+            <img src = '' />
         </div>
     );
 }

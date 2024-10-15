@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSearch } from 'react-icons/fa';
+//import { FaSearch } from 'react-icons/fa';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import './SearchRobotsSkeleton.css';
@@ -11,7 +11,7 @@ export default function SearchRobotsSkeleton() {
             <div className="topPiece" />
             <div className="middlePiece">
                 <div className="searchbar">
-                    <FaSearch className="searchIcon" size={25} color={'black'} />
+                    <img src = '' />
                 </div>
                 <div className="viewScoutingData">
                     <StatGlimpse isLoading={true} />

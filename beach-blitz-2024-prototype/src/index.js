@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app.json';
+import App from './App.jsx';
 import './index.css'; // Assuming you have a global CSS file
 
 // Export default navigation functions in index.js to save lines in navigation.jsx
