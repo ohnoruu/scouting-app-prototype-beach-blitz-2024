@@ -11,19 +11,19 @@ export default function DeleteRobot() {
   const [robotList, setRobotList] = useState([]);
 
   useEffect(() => {
-    axios.get('http://10.0.2.2:3000/robotList') // imports data using axios
+    axios.get('http://localhost:3000/robotList') // imports data using axios
       .then((response) => { // sets robotList to the data
         setRobotList(response.data);
       })
       .catch((error) => {
-        console.error(error);
+        console.error("Error making POST Request: (DeleteRobot, robotList)", error);
       });
   }, [setRobotList]); // Updates on page load and when setRobotList changes
 
   const removeRobot = async (teamNumber) => {
     // remove robot from robotList and update list on screen
-    await axios.get(`http://10.0.2.2:3000/removeRobot/${teamNumber}`);
-    let newList = await axios.get('http://10.0.2.2:3000/robotList');
+    await axios.get(`http://localhost:3000/removeRobot/${teamNumber}`);
+    let newList = await axios.get('http://localhost:3000/robotList');
     setRobotList((prev) => newList.data);
   };
 

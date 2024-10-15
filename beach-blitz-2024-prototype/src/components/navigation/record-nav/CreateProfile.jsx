@@ -43,7 +43,7 @@ export default function CreateProfile() {
         };
 
         try {
-            await axios.post('http://10.0.2.2:3000/addProfile', profileData);
+            await axios.post('http://localhost:3000/addProfile', profileData);
         } catch (error) {
             console.error('Error making a POST request:', error);
         }

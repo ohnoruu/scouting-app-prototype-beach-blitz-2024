@@ -10,10 +10,13 @@ export default function Profile() {
     const [robotProfileData, setRobotProfileData] = useState();
 
     useEffect(() => {
-        axios.get(`http://10.0.2.2:3000/getRobot/${teamNumber}`)
-        .then((response) => {
-          setRobotProfileData(response.data);
-        });
+        axios.get(`http://localhost:3000/getRobot/${teamNumber}`)
+            .then((response) => {
+                setRobotProfileData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error making POST Request (Profile, getRobot teamNumber): ", error);
+            });
     }, [teamNumber]);
 
     return (

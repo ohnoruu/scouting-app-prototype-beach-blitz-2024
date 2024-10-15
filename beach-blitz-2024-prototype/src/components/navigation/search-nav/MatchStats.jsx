@@ -12,14 +12,19 @@ export default function MatchStats() {
     const [robotMatchData, setRobotMatchData] = useState();
 
     useEffect(() => {
-        axios.get(`http://10.0.2.2:3000/getRobot/${teamNumber}`)
+        axios.get(`http://localhost:3000/getRobot/${teamNumber}`)
             .then((response) => {
                 setRobotProfileData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error making POST Request (MatchStats, getRobot teamNumber): ", error);
             });
-
-        axios.get(`http://10.0.2.2:3000/getMatch/${teamNumber}/${matchNumber}`)
+        axios.get(`http://localhost:3000/getMatch/${teamNumber}/${matchNumber}`)
             .then((response) => {
                 setRobotMatchData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error making POST Request (MatchStats, getRobot teamNumber matchNumber: ", error);
             });
     }, [teamNumber, matchNumber]);
 

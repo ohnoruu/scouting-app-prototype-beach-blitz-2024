@@ -11,12 +11,12 @@ export default function SearchRobots() {
   const [genData, setGenData] = useState();
 
   useEffect(() => {
-    axios.get('http://10.0.2.2:3000/robotList')
+    axios.get('http://localhost:3000/robotList')
       .then((response) => {
         setGenData(response.data);
       })
       .catch((error) => {
-        console.error(error);
+        console.error("Error making POST Request: SearchRobots, robotList: ", error);
       });
   }, []);
 
