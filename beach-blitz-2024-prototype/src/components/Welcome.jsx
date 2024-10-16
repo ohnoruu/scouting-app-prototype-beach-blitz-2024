@@ -1,14 +1,15 @@
 import robbie from '../assets/images/robbie-transparent.png';
 import FIRSTlogo from '../assets/images/FIRST.png';
 import floor from '../assets/images/floor.png';
-
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import './Welcome.css';
 
 export default function Launch({ navigation }) {
-
+    const navigate = useNavigate();
+    
     let navigateToMain = () => {
-        navigation.navigate('Navigator');
+        navigate('/navigator');
     };
 
     return (

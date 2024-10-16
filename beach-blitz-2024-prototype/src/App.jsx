@@ -11,7 +11,12 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Launch />} />
                 <Route path="/welcome" element={<Welcome />} />
-                <Route path="/navigator" element={<Navigator />} />
+                <Route path="/navigator" element={<Navigator />}>
+                    <Route path="home" element={<Home/>} />
+                    <Route path="search" element={<Search/>} />
+                    <Route path="record" element={<Record/>} />
+                    <Route path="settings" element={<Settings/>} />
+                </Route>
             </Routes>
         </Router>
     );

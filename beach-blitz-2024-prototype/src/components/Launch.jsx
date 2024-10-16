@@ -2,9 +2,11 @@ import robbie from '../assets/images/robbie-transparent.png';
 import logo from '../assets/images/logo.png';
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Launch.css';
 
-export default function Launch({ navigation }) {
+export default function Launch() {
+    const navigate = useNavigate();
 
     let [isLoading, setIsLoading] = useState(true);
 
@@ -13,10 +15,10 @@ export default function Launch({ navigation }) {
 
         if (isLoading === false) {
             setTimeout(() => {
-                navigation.navigate('Welcome');
+                navigate('/Welcome');
             }, 2000);
         }
-    }, [navigation, isLoading]);
+    }, [isLoading, navigate]);
 
     return (
         <div className="container">

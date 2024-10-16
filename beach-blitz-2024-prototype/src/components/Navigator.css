@@ -2,19 +2,24 @@
     width: 100%;
   }
   
-  .tabBar {
-    background-color: #E1584B;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-  }
+.tabBar {
+  background-color: #E1584B;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
   
-  .tabLink {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .activeTab {
-    color: white;
-  }
+.tabLink {
+  color: black;
+  text-decoration: none;
+}
+
+.activeTab {
+  color: white;
+}
+
+.icon {
+  color: black;
+  font-size: 25px;
+}
