@@ -7,12 +7,10 @@ import SelectProfile from './record-nav/SelectProfile';
 
 export default function Record() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<SelectProfile />} />
-        <Route path="/create-profile" element={<CreateProfile />} />
-        <Route path="/record-game" element={<RecordGame />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<SelectProfile />} />
+      <Route path="/create-profile" element={<CreateProfile />} />
+      <Route path="/record-game" element={<RecordGame />} />
+    </Routes>
   );
 }

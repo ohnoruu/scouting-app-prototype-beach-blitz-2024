@@ -1,9 +1,13 @@
 .tabNavigator {
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
   
 .tabBar {
+  position: fixed;
   background-color: #E1584B;
+  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -20,6 +24,5 @@
 }
 
 .icon {
-  color: black;
   font-size: 25px;
 }

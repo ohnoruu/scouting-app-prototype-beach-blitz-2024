@@ -9,7 +9,7 @@ export default function Launch({ navigation }) {
     const navigate = useNavigate();
     
     let navigateToMain = () => {
-        navigate('/navigator');
+        navigate('/navigator/home');
     };
 
     return (
