@@ -18,9 +18,7 @@ export default function App() {
                 <Route path="/navigator" element={<Navigator />}>
                     <Route path="home" element={<Home />} />
                     <Route path="search" element={<Search />} />
-                    <Route path="record" element={<Record />}>
-                        <Route path="create-profile" element={<CreateProfile />} />
-                    </Route>
+                    <Route path="record" element={<Record />} />
                     <Route path="settings" element={<Settings />} />
                 </Route>
             </Routes>

@@ -33,7 +33,7 @@ export default function SelectProfile() {
             ))}
           </Suspense>
         </div>
-        <button className="createButton" onClick={() => navigate('/create-profile')}>
+        <button className="createButton" onClick={() => navigate('create-profile')}>
           <span className="createButtonText">Create New Robot Profile</span>
         </button>
       </div>

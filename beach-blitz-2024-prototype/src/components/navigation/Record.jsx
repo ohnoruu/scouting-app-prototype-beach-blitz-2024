@@ -9,8 +9,8 @@ export default function Record() {
   return (
     <Routes>
       <Route path="/" element={<SelectProfile />} />
-      <Route path="/create-profile" element={<CreateProfile />} />
-      <Route path="/record-game" element={<RecordGame />} />
+      <Route path="create-profile" element={<CreateProfile />} />
+      <Route path="record-game" element={<RecordGame />} />
     </Routes>
   );
 }
