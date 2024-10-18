@@ -7,6 +7,11 @@ import './SelectProfile.css';
 
 export default function SelectProfile() {
   const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('create-profile');
+  };
+
   const [profileData, setProfileData] = useState();
 
   useEffect(() => {
@@ -33,7 +38,7 @@ export default function SelectProfile() {
             ))}
           </Suspense>
         </div>
-        <button className="createButton" onClick={() => navigate('create-profile')}>
+        <button className="createButton" onClick={handleNavigate}>
           <span className="createButtonText">Create New Robot Profile</span>
         </button>
       </div>
