@@ -50,7 +50,7 @@
   
   .viewScoutingData {
     width: 100%;
-    max-height: 84%;
+    max-height: 100%;
   }
   
   .scrollView {
@@ -60,10 +60,6 @@
   .scoutingDataGlimpses {
     display: flex;
     flex-direction: column;
-  }
-  
-  .pressable {
-    cursor: pointer;
   }
   
   .header {

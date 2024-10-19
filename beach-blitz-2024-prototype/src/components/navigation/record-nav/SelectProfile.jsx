@@ -32,7 +32,7 @@ export default function SelectProfile() {
         <div className="viewSelection">
           <Suspense fallback={<SelectProfileSkeleton />}>
             {profileData?.map((robot) => (
-              <div key={'recording:' + robot.profile.teamNumber} onClick={() => navigate('record-game', { state: { robot: robot } })}>
+              <div className = "profileSelection" key={'recording:' + robot.profile.teamNumber} onClick={() => navigate('record-game', { state: { robot: robot } })}>
                 <DisplayProfile profileData={robot} />
               </div>
             ))}
