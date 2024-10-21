@@ -55,7 +55,7 @@ export default function SearchRobots() {
                   <div
                     key={robot.profile.teamNumber}
                     onClick={() => {
-                      navigate('/profile', { state: { teamNumber: robot.profile.teamNumber } });
+                      navigate(`/search/profile/${robot.profile.teamNumber}`);
                     }}
                     className="pressable"
                   >

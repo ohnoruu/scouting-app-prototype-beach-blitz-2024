@@ -10,7 +10,7 @@ export default function Navigator() {
       <div className="tabNavigator">
         <nav className="tabBar">
           <NavLink 
-          exact to="home" 
+          to="home" 
           className={({ isActive }) => isActive ? 'activeTab' : 'tabLink'}
           >
             <IonIcon name="home-outline" className="icon"/>
