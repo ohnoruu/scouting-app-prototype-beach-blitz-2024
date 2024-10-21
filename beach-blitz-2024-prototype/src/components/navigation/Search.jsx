@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import SearchRobots from './search-nav/SearchRobots.jsx';
-import Profile from './search-nav/Profile.jsx';
-import MatchStats from './search-nav/MatchStats.jsx';
+import SearchRobots from './search-nav/SearchRobots';
+import Profile from './search-nav/Profile';
+import MatchStats from './search-nav/MatchStats';
 
 export default function Search() {
   return (

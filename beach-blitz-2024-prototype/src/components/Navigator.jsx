@@ -10,25 +10,25 @@ export default function Navigator() {
       <div className="tabNavigator">
         <nav className="tabBar">
           <NavLink 
-          to="home" 
+          to="/navigator/home" 
           className={({ isActive }) => isActive ? 'activeTab' : 'tabLink'}
           >
             <IonIcon name="home-outline" className="icon"/>
           </NavLink>
           <NavLink 
-          to="search" 
+          to="/navigator/search" 
           className = {({ isActive }) => isActive ? 'activeTab' : 'tabLink'}
           >
             <IonIcon name="search-outline" className="icon"/>
           </NavLink>
           <NavLink 
-          to="record" 
+          to="/navigator/record" 
           className= {({ isActive }) => isActive ? 'activeTab' : 'tabLink'}
           >
             <IonIcon name="add-circle-outline" className="icon"/>
           </NavLink>
           <NavLink 
-          to="settings" 
+          to="/navigator/settings" 
           className= {({ isActive }) => isActive ? 'activeTab' : 'tabLink'}
           >
             <IonIcon name="settings-outline" className="icon"/>

@@ -10,6 +10,10 @@ export default function Home() {
   const [robotList, alterRobotList] = useState();
   const [closeInfo, setCloseInfo] = useState(false);
 
+  const handleProfileNavigation = (teamNumber) => {
+    navigate(`/navigator/search/profile/${teamNumber}`);
+  }
+
   useEffect(() => {
     axios.get('http://localhost:3000/robotList') 
       .then((response) => {
@@ -53,7 +57,7 @@ export default function Home() {
             <span className="header">View Scouting Data</span>
             <div className="scoutingDataGlimpses">
               {robotList?.map((robot) => (
-                <button key={robot.profile.teamNumber} className="statGlimpseButton">
+                <button key={robot.profile.teamNumber} className="statGlimpseButton" >
                   <StatGlimpse name={robot.profile.teamName} teamNumber={robot.profile.teamNumber} driveBase={robot.profile.driveBase} intake={robot.profile.intake} />
                 </button>
               ))}

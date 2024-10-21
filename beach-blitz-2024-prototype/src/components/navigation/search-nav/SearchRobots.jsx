@@ -12,6 +12,10 @@ export default function SearchRobots() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredData, setFilteredData] = useState([]);
 
+  const handleProfileNavigation = (teamNumber) => {
+    navigate(`/navigator/search/profile/${teamNumber}`);
+  }
+  
   useEffect(() => {
     axios.get('http://localhost:3000/robotList')
       .then((response) => {
@@ -54,9 +58,7 @@ export default function SearchRobots() {
                 {filteredData?.map((robot) => (
                   <div
                     key={robot.profile.teamNumber}
-                    onClick={() => {
-                      navigate(`/search/profile/${robot.profile.teamNumber}`);
-                    }}
+                    onClick={() => handleProfileNavigation(robot.profile.teamNumber)}
                     className="pressable"
                   >
                     <StatGlimpse
