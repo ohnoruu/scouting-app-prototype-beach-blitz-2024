@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-//import { IonIcon } from '../../../index.js';
+import IonIcon from '@reacticons/ionicons';
 import './MatchStats.css';
 
 export default function MatchStats() {

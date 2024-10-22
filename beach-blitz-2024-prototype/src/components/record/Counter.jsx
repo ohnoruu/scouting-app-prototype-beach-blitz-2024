@@ -1,15 +1,15 @@
 import React from 'react';
+//Buttons to subtract or add points
 //import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import './Counter.css';
 
-export default function Counter({ target, setTarget, style }) {
+export default function Counter({ target, setTarget }) {
     return (
         <div className="counter-container">
             <img src = '' />
             <input
                 type="text"
                 value={target.toString()}
-                style={style}
                 className="counter-input"
                 onChange={(e) => {
                     const parsedValue = parseInt(e.target.value);

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import { IonIcon } from '@reacticons/ionicons'
+import IonIcon from '@reacticons/ionicons'
 import Counter from '../../record/Counter.jsx';
 import CheckRecord from '../../record/CheckRecord.jsx';
 import './RecordGame.css';
 
-export default function RecordGame({ route }) {
+export default function RecordGame() {
     const navigate = useNavigate();
-    const { robot } = route.params;
-    const robotTeamNumber = robot.profile.teamNumber;
+    const { teamNumber } = useParams();
+    const location = useLocation();
+    const { robot } = location.state;
 
     const matchTypeSelection = [
         { label: 'Practice Match', value: 'Practice Match' },
@@ -44,11 +45,11 @@ export default function RecordGame({ route }) {
             teleOpAmp,
             autoSpeaker,
             autoAmp,
-            comment,
+            comment, 
         };
 
         try {
-            await axios.post(`http://localhost:3000/addMatch/${robotTeamNumber}`, matchData);
+            await axios.post(`http://localhost:3000/addMatch/${teamNumber}`, matchData);
         } catch (error) {
             console.error('Error making a POST request:', error);
         }
@@ -61,7 +62,7 @@ export default function RecordGame({ route }) {
             <div className="topPiece" />
             <div className="middlePiece">
                 <div className="header">
-                    <IonIcon name="return-left"/>
+                    <IonIcon name = "return-left" className = "return-icon"/>
                 </div>
                 <div className="scrollView">
                     <div className="row space-between">

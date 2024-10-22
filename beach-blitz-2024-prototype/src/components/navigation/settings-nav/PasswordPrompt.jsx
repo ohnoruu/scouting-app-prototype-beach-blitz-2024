@@ -9,7 +9,7 @@ export default function PasswordPrompt() {
     const submitPassword = () => {
         // will hide password in the backend later
         if (passValue === 'cyberlions8521') {
-            navigate('/settings-panel');
+            navigate('/navigator/settings/settings-panel');
         }
     };
 

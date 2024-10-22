@@ -1,7 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DeleteRobotSkeleton from '../../settings/DeleteRobotSkeleton';
-//import { IonIcon } from '../../../index.js';
+import IonIcon from '@reacticons/ionicons'
 import axios from 'axios';
 import './DeleteRobot.css';
 
@@ -42,8 +42,8 @@ export default function DeleteRobot() {
         <div className="topPiece" />
         <div className="middlePiece">
           <div className="titleContainer">
-            <button onClick={() => navigate('/settings-panel')}>
-              <img src="https://static.vecteezy.com/system/resources/previews/024/722/367/non_2x/fish-with-ai-generated-free-png.png" />
+            <button onClick={() => navigate(-1)}>
+              <img src="" />
             </button>
             <span className="title">Select Robot to Delete</span>
           </div>
