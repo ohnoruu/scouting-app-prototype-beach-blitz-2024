@@ -1,12 +1,12 @@
 import React from 'react';
 //Buttons to subtract or add points
-//import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import './Counter.css';
 
 export default function Counter({ target, setTarget }) {
     return (
         <div className="counter-container">
-            <img src = '' />
+            <FaMinusCircle className = "icon" onClick = {() => setTarget(prev => prev - 1)}/>
             <input
                 type="text"
                 value={target.toString()}
@@ -20,7 +20,7 @@ export default function Counter({ target, setTarget }) {
                     }
                 }}
             />
-            <img src = '' />
+            <FaPlusCircle className = "icon" onClick={() => setTarget(prev => prev + 1)}/>
         </div>
     );
 }

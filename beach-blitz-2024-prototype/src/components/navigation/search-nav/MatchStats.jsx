@@ -33,7 +33,7 @@ export default function MatchStats() {
             <div className="topPiece" />
             <div className="container">
                 <div className="buttonPiece">
-                    <img src="https://static.vecteezy.com/system/resources/previews/024/722/367/non_2x/fish-with-ai-generated-free-png.png"/>
+                    <img src=""/>
                 </div>
 
                 {robotMatchData &&

@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DeleteRobotSkeleton from '../../settings/DeleteRobotSkeleton';
+import { FaArrowLeft } from 'react-icons/fa';
 import IonIcon from '@reacticons/ionicons'
 import axios from 'axios';
 import './DeleteRobot.css';
@@ -42,14 +43,10 @@ export default function DeleteRobot() {
         <div className="topPiece" />
         <div className="middlePiece">
           <div className="titleContainer">
-            <button onClick={() => navigate(-1)}>
-              <img src="" />
-            </button>
+              <FaArrowLeft onClick={() => navigate(-1)} className = "return-icon"/>
             <span className="title">Select Robot to Delete</span>
           </div>
-
           <span className="subText">This action CANNOT BE UNDONE. DO NOT CLICK PROFILES YOU DO NOT WANT TO DELETE.</span>
-
           <div className="robotListContainer">
             <Suspense fallback={<DeleteRobotSkeleton />}>
               {displayData}

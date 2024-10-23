@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa'
 import axios from 'axios';
 import './CreateProfile.css';
 
@@ -56,11 +57,8 @@ export default function CreateProfile() {
             <div className="topPiece" />
             <div className="middlePiece">
                 <div className="header">
-                    <span className="chevron-left" onClick={() => navigate(-1)}>&lt;</span>
+                    <FaArrowLeft className="chevron-left" onClick={() => navigate(-1)} />
                     <span className="headerText">Create Robot Profile</span>
-                    <button className="submitButton" onClick={submitProfile}>
-                        <span className="submitButtonText">Submit</span>
-                    </button>
                 </div>
                 <div className="scrollView">
                     <span className="headerText">General Information</span>
@@ -110,6 +108,9 @@ export default function CreateProfile() {
                         <span className="headerText">Additional Details</span>
                         <textarea value={additionalDetails} className="detailInput" onChange={e => setAdditionalDetails(e.target.value)} />
                     </div>
+                    <button className="submitButton" onClick={submitProfile}>
+                        <span className="submitButtonText">Submit</span>
+                    </button>
                 </div>
             </div>
         </div>

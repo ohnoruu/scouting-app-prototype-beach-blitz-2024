@@ -13,6 +13,10 @@
   .buttonPiece {
     width: 100%;
     margin-left: 20px;
+    font-size: 24px;
+    color: #646464;
+    margin-right: 95%;
+    cursor: pointer;
   }
   
   .middlePieceContainer {
@@ -40,19 +44,26 @@
   }
   
   .robotDetails {
+    align-items: left;
     gap: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 5%;
   }
   
   .matchSection {
+    justify-self: center;
     gap: 100px;
     overflow-y: auto;
+    width: 100%;
+    margin-left: 2%;
   }
   
   .matches {
     display: flex;
     flex-direction: column;
-    border-width: 2.5px;
-    border-color: #C8C8C8;
+    border: 2px solid #C8C8C8;
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;

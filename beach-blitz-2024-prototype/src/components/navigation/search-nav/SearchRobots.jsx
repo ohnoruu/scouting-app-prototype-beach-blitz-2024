@@ -62,10 +62,10 @@ export default function SearchRobots() {
                     className="pressable"
                   >
                     <StatGlimpse
-                      name={robot.profile.teamName}
-                      teamNumber={robot.profile.teamNumber}
-                      driveBase={robot.profile.driveBase}
-                      intake={robot.profile.intake}
+                      name={robot.profile?.teamName}
+                      teamNumber={robot.profile?.teamNumber}
+                      driveBase={robot.profile?.driveBase}
+                      intake={robot.profile?.intake}
                     />
                   </div>
                 ))}
