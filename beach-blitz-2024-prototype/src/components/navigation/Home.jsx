@@ -58,7 +58,7 @@ export default function Home() {
             <div className="scoutingDataGlimpses">
               {robotList?.map((robot) => (
                 <button key={robot.profile.teamNumber} className="statGlimpseButton" onClick = {()=> handleProfileNavigation(robot.profile.teamNumber)}>
-                  <StatGlimpse name={robot.profile.teamName} teamNumber={robot.profile.teamNumber} driveBase={robot.profile.driveBase} intake={robot.profile.intake} />
+                  <StatGlimpse name={robot.profile.teamName} teamNumber={robot.profile.teamNumber} drivebase={robot.profile.drivebase} intake={robot.profile.intake} />
                 </button>
               ))}
             </div>

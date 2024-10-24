@@ -64,7 +64,7 @@ export default function SearchRobots() {
                     <StatGlimpse
                       name={robot.profile?.teamName}
                       teamNumber={robot.profile?.teamNumber}
-                      driveBase={robot.profile?.driveBase}
+                      drivebase={robot.profile?.drivebase}
                       intake={robot.profile?.intake}
                     />
                   </div>

@@ -20,7 +20,7 @@ export default function RecordGame() {
         { label: 'Semifinals', value: 'Semifinals' },
     ];
 
-    const [matchType, setMatchType] = useState(null);
+    const [matchType, setMatchType] = useState("Practice Match");
     const [matchNumber, setMatchNumber] = useState(null);
 
     const [coopertition, setCoopertition] = useState(false);

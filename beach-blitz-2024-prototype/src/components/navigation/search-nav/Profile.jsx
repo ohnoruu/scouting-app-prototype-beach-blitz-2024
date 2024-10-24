@@ -46,7 +46,7 @@ export default function Profile() {
                         </div>
 
                         <div className="robotDetails">
-                            <span className="text">Drivebase: {robotProfileData.profile?.driveBase}</span>
+                            <span className="text">Drivebase: {robotProfileData.profile?.drivebase}</span>
                             <span className="text">Autonomous: {robotProfileData.profile?.autonomous?.toString()}</span>
                             <span className="text">Intake: {robotProfileData.profile?.intake}</span>
                             <span className="text">Additional Details: {robotProfileData.profile?.additionalDetails}</span>

@@ -48,6 +48,7 @@ export default function MatchStats() {
                             <p className="teamDescText">Climbed: {matchData.climbed.toString()}</p>
                             <p className="teamDescText">Coopertition: {matchData.coopertition.toString()}</p>
                             <p className="teamDescText">High Note: {matchData.highNote.toString()}</p>
+                            <p className="teamDescText">Comments: {matchData.comment}</p>
                         </div>
                     </>
                 }
