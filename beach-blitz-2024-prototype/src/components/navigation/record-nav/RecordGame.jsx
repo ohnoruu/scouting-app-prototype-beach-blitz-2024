@@ -59,17 +59,17 @@ export default function RecordGame() {
     };
 
     return (
-        <div className="container">
+        <div className="recordGame_container">
             <div className="topPiece" />
             <div className="middlePiece">
                 <div className="header">
                     <FaArrowLeft className = "return-icon" onClick = {() => navigate(-1)} />
                 </div>
-                <div className="scrollView">
+                <div className="recordGame_scrollView">
                     <div className="row space-between">
                         <div className="column">
-                            <span className="headerText">{robot.profile.teamName}</span>
-                            <span className="subText">Team {robot.profile.teamNumber}</span>
+                            <span className="recordGame_headerText">{robot.profile.teamName}</span>
+                            <span className="recordGame_subText">Team {robot.profile.teamNumber}</span>
                         </div>
                     </div>
                     <div className="row gap-10">

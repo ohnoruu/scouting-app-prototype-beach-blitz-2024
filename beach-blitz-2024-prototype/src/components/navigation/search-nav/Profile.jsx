@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import IonIcon from '@reacticons/ionicons';
 import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
 import './Profile.css';
@@ -31,7 +30,7 @@ export default function Profile() {
     return (
         <div className="container">
             <div className="topPiece" />
-                <FaArrowLeft onClick={() => navigate(-1)} className = "buttonPiece" />
+            <FaArrowLeft onClick={() => navigate(-1)} className="buttonPiece" />
             <div className="middlePieceContainer">
                 <div className="middlePiece">
 
@@ -60,7 +59,7 @@ export default function Profile() {
                 <div className="matchSection">
                     {robotProfileData?.matches?.map((match) => (
                         <div key={`${robotProfileData.profile?.teamName} match ${match.matchNumber}`}
-                            onClick={() => navigate('/navigator/search/match-stats', { state: { teamNumber: robotProfileData.profile?.teamNumber, matchNumber: match.matchNumber } })}>
+                            onClick={() => navigate('/navigator/search/match-stats', { state: { teamNumber: robotProfileData.profile?.teamNumber, matchData: match } })}>
 
                             <div className="matches">
                                 <span className="text"> Match Number: {match.matchNumber} </span>
