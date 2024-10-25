@@ -1,66 +1,75 @@
-.container {
+.profile_container {
     width: '100%';
     height: '100%';
     gap: 20px;
     background-color: white;
+    margin: 1vh;
   }
   
-  .topPiece {
+  .profile_topPiece {
     height: 8%;
     background-color: #E1584B;
   }
   
-  .buttonPiece {
-    width: 100%;
-    margin-left: 20px;
+  .profile_buttonPiece {
+    margin-top: 2vh;
+    margin-left: 2vh;
     font-size: 24px;
     color: #646464;
-    margin-right: 95%;
     cursor: pointer;
   }
   
-  .middlePieceContainer {
+  .profile_middlePieceContainer {
     width: 100%;
     align-items: center;
+    margin-top: 3vh;
     max-height: 93.5%;
   }
   
-  .middlePiece {
+  .profile_middlePiece {
     width: 90%;
     gap: 20px;
   }
   
-  .teamMain {
+  .profile_teamMain {
     display: flex;
     flex-direction: row;
     gap: 20px;
     justify-content: space-between;
     max-height: 150px;
   }
+
+  .profile_teamSubMain{ 
+    margin-left: 2vh;
+    gap: 1vh;
+    display: flex;
+    flex-direction: column;
+  }
   
-  .image {
+  .profile_image {
     max-width: 55%;
     max-height: 100px;
   }
   
-  .robotDetails {
+  .profile_robotDetails {
     align-items: left;
-    gap: 5px;
+    gap: 1vh;
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-left: 5%;
+    margin: 2vh;
   }
   
-  .matchSection {
+  .profile_matchSection {
     justify-self: center;
     gap: 100px;
     overflow-y: auto;
     width: 100%;
-    margin-left: 2%;
+    height: 100vh;
+    margin-left: 2vh;
   }
   
-  .matches {
+  .profile_matches {
     display: flex;
     flex-direction: column;
     border: 2px solid #C8C8C8;
@@ -69,15 +78,15 @@
     margin-bottom: 10px;
   }
   
-  .text {
+  .profile_text {
     font-size: 14px;
     width: 100%;
   }
   
-  .subText {
+  .profile_subText {
     font-size: 12px;
   }
   
-  .header {
-    font-size: 20px;
+  .profile_header {
+    font-size: 25px;
   }

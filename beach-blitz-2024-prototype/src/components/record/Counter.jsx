@@ -6,7 +6,7 @@ import './Counter.css';
 export default function Counter({ target, setTarget }) {
     return (
         <div className="counter-container">
-            <FaMinusCircle className = "icon" onClick = {() => setTarget(prev => prev - 1)}/>
+            <FaMinusCircle className = "counter-icon" onClick = {() => setTarget(prev => prev - 1)}/>
             <input
                 type="text"
                 value={target.toString()}
@@ -20,7 +20,7 @@ export default function Counter({ target, setTarget }) {
                     }
                 }}
             />
-            <FaPlusCircle className = "icon" onClick={() => setTarget(prev => prev + 1)}/>
+            <FaPlusCircle className = "counter-icon" onClick={() => setTarget(prev => prev + 1)}/>
         </div>
     );
 }

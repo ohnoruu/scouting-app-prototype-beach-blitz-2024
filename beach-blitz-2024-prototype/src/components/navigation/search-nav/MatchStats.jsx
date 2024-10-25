@@ -25,30 +25,30 @@ export default function MatchStats() {
 
     return (
         <>
-            <div className="topPiece" />
-            <div className="container">
-                    <FaArrowLeft className="buttonPiece" onClick = {() => navigate(-1)}/>
+            <div className="matchStats_topPiece" />
+            <div className="matchStats_container">
+                    <FaArrowLeft className="matchStats_buttonPiece" onClick = {() => navigate(-1)}/>
                 {matchData && robotProfileData &&
                     <>
-                        <div className="teamMain">
-                            <div className="teamNameNum">
-                                <span className="header">{robotProfileData.profile.teamName}</span>
-                                <span className="subHeader">{robotProfileData.profile.teamNumber}</span>
+                        <div className="matchStats_teamMain">
+                            <div className="matchStats_teamNameNum">
+                                <span className="matchStats_header">{robotProfileData.profile.teamName}</span>
+                                <span className="matchStats_subHeader">{robotProfileData.profile.teamNumber}</span>
                             </div>
-                            <img className="image" src={require('../../../assets/interface-icons/filler-image.png')} alt="Robot" />
+                            <img className="matchStats_image" src={require('../../../assets/interface-icons/filler-image.png')} alt="Robot" />
                         </div>
 
-                        <div className="teamDesc">
-                            <p className="teamDescText">Match Number: {matchData.matchNumber}</p>
-                            <p className="teamDescText">Match Type: {matchData.matchType}</p>
-                            <p className="teamDescText">Teleop Amp Count: {matchData.teleOpAmp}</p>
-                            <p className="teamDescText">Teleop Speaker Count: {matchData.teleOpSpeaker}</p>
-                            <p className="teamDescText">Autonomous Amp Count: {matchData.autoAmp}</p>
-                            <p className="teamDescText">Autonomous Speaker Count: {matchData.autoSpeaker}</p>
-                            <p className="teamDescText">Climbed: {matchData.climbed.toString()}</p>
-                            <p className="teamDescText">Coopertition: {matchData.coopertition.toString()}</p>
-                            <p className="teamDescText">High Note: {matchData.highNote.toString()}</p>
-                            <p className="teamDescText">Comments: {matchData.comment}</p>
+                        <div className="matchStats_teamDesc">
+                            <p className="matchStats_teamDescText">Match Number: {matchData.matchNumber}</p>
+                            <p className="matchStats_teamDescText">Match Type: {matchData.matchType}</p>
+                            <p className="matchStats_teamDescText">Teleop Amp Count: {matchData.teleOpAmp}</p>
+                            <p className="matchStats_teamDescText">Teleop Speaker Count: {matchData.teleOpSpeaker}</p>
+                            <p className="matchStats_teamDescText">Autonomous Amp Count: {matchData.autoAmp}</p>
+                            <p className="matchStats_teamDescText">Autonomous Speaker Count: {matchData.autoSpeaker}</p>
+                            <p className="matchStats_teamDescText">Climbed: {matchData.climbed.toString()}</p>
+                            <p className="matchStats_teamDescText">Coopertition: {matchData.coopertition.toString()}</p>
+                            <p className="matchStats_teamDescText">High Note: {matchData.highNote.toString()}</p>
+                            <p className="matchStats_teamDescText">Comments: {matchData.comment}</p>
                         </div>
                     </>
                 }

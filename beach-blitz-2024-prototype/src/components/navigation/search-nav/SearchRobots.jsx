@@ -38,9 +38,9 @@ export default function SearchRobots() {
   };
 
   return (
-    <div className="container">
-      <div className="topPiece" />
-      <div className="middlePiece">
+    <div className="searchRobots_container">
+      <div className="searchRobots_topPiece" />
+      <div className="searchRobots_middlePiece">
         <span className="header">Get Started Scouting</span>
         <div className="searchSection">
           <IonIcon name="search-outline" className="searchIcon"/>
@@ -51,8 +51,8 @@ export default function SearchRobots() {
             onChange={handleSearchChange}
           />
         </div>
-        <div className="viewScoutingData">
-          <div className="scrollView">
+        <div className="searchRobots_viewScoutingData">
+          <div className="searchRobots_scrollView">
             <div className="scoutingDataGlimpses">
               <Suspense fallback={<SearchRobotsSkeleton />}>
                 {filteredData?.map((robot) => (

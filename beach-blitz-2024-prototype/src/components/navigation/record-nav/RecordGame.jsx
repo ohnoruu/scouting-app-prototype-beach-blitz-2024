@@ -60,66 +60,66 @@ export default function RecordGame() {
 
     return (
         <div className="recordGame_container">
-            <div className="topPiece" />
-            <div className="middlePiece">
-                <div className="header">
-                    <FaArrowLeft className = "return-icon" onClick = {() => navigate(-1)} />
+            <div className="recordGame_topPiece" />
+            <div className="recordGame_middlePiece">
+                <div className="recordGame_header">
+                    <FaArrowLeft className = "recordGame_return-icon" onClick = {() => navigate(-1)} />
                 </div>
                 <div className="recordGame_scrollView">
-                    <div className="row space-between">
-                        <div className="column">
+                    <div className="recordGame_row recordGame_space-between">
+                        <div className="recordGame_column">
                             <span className="recordGame_headerText">{robot.profile.teamName}</span>
                             <span className="recordGame_subText">Team {robot.profile.teamNumber}</span>
                         </div>
                     </div>
-                    <div className="row gap-10">
-                        <select className="dropdown" value={matchType} onChange={e => setMatchType(e.target.value)}>
+                    <div className="recordGame_row recordGame_gap-10">
+                        <select className="recordGame_dropdown" value={matchType} onChange={e => setMatchType(e.target.value)}>
                             <option value="" disabled>Match Type</option>
                             {matchTypeSelection.map(option => (
                                 <option key={option.value} value={option.value}>{option.label}</option>
                             ))}
                         </select>
-                        <input value={matchNumber} className="matchNumber" placeholder="Match Number" type="number" onChange={e => setMatchNumber(e.target.value)} />
+                        <input value={matchNumber} className="recordGame_matchNumber" placeholder="Match Number" type="number" onChange={e => setMatchNumber(e.target.value)} />
                     </div>
-                    <div className="checkboxes">
+                    <div className="recordGame_checkboxes">
                         <CheckRecord checkboxTitle="Cooperition" stateValue={coopertition} changeState={setCoopertition} />
                         <CheckRecord checkboxTitle="High Note" stateValue={highNote} changeState={setHighNote} />
                         <CheckRecord checkboxTitle="Climbed" stateValue={climbed} changeState={setClimbed} />
                         <CheckRecord checkboxTitle="Trap" stateValue={trap} changeState={setTrap} />
                     </div>
-                    <p className="marginTop30">Add +1 for each NOTE scored. Ex: robot puts 1 note in AMP</p>
-                    <div className="marginTop30 gap-20">
+                    <p className="recordGame_marginTop30">Add +1 for each NOTE scored. Ex: robot puts 1 note in AMP</p>
+                    <div className="recordGame_marginTop30 recordGame_gap-20">
                         <div>
-                            <span className="headerText">Teleoperation</span>
-                            <div className="row space-between">
-                                <div className="pointContainer">
+                            <span className="recordGame_headerText">Teleoperation</span>
+                            <div className="recordGame_row recordGame_space-between">
+                                <div className="recordGame_pointContainer">
                                     <span>Speaker</span>
-                                    <Counter target={teleOpSpeaker} setTarget={setTeleOpSpeaker} className="pointInput" />
+                                    <Counter target={teleOpSpeaker} setTarget={setTeleOpSpeaker} className="recordGame_pointInput" />
                                 </div>
-                                <div className="pointContainer">
+                                <div className="recordGame_pointContainer">
                                     <span>Amp</span>
-                                    <Counter target={teleOpAmp} setTarget={setTeleOpAmp} className="pointInput" />
+                                    <Counter target={teleOpAmp} setTarget={setTeleOpAmp} className="recordGame_pointInput" />
                                 </div>
                             </div>
                         </div>
-                        <span className="headerText">Autonomous</span>
-                        <div className="row space-between">
-                            <div className="pointContainer">
+                        <span className="recordGame_headerText">Autonomous</span>
+                        <div className="recordGame_row recordGame_space-between">
+                            <div className="recordGame_pointContainer">
                                 <span>Speaker</span>
-                                <Counter target={autoSpeaker} setTarget={setAutoSpeaker} className="pointInput" />
+                                <Counter target={autoSpeaker} setTarget={setAutoSpeaker} className="recordGame_pointInput" />
                             </div>
-                            <div className="pointContainer">
+                            <div className="recordGame_pointContainer">
                                 <span>Amp</span>
-                                <Counter target={autoAmp} setTarget={setAutoAmp} className="pointInput" />
+                                <Counter target={autoAmp} setTarget={setAutoAmp} className="recordGame_pointInput" />
                             </div>
                         </div>
                     </div>
-                    <div className="marginTop20">
-                        <span className="headerText">Additional Comments</span>
-                        <textarea value={comment} className="detailInput" onChange={e => setComment(e.target.value)} />
+                    <div className="recordGame_marginTop20">
+                        <span className="recordGame_headerText">Additional Comments</span>
+                        <textarea value={comment} className="recordGame_detailInput" onChange={e => setComment(e.target.value)} />
                     </div>
-                    <button className="submitButton" onClick={submitMatch}>
-                        <span className="submitButtonText">Submit</span>
+                    <button className="recordGame_submitButton" onClick={submitMatch}>
+                        <span className="recordGame_submitButtonText">Submit</span>
                     </button>
                 </div>
             </div>

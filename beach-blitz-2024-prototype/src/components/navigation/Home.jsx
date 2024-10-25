@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="container">
+      <div className="home_container">
         <div className="topPiece" />
 
         <div className="middlePiece">

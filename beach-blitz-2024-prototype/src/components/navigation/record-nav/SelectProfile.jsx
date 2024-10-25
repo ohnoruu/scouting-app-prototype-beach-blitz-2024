@@ -25,10 +25,10 @@ export default function SelectProfile() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="selectProfile_container">
       <div className="topPiece" />
-      <div className="middlePiece">
-        <span className="header">Select Robot to Scout</span>
+      <div className="selectProfile_middlePiece">
+        <span className="selectProfile_header">Select Robot to Scout</span>
         <div className="viewSelection">
           <Suspense fallback={<SelectProfileSkeleton />}>
             {profileData?.map((robot) => (

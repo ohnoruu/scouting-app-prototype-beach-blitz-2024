@@ -1,19 +1,20 @@
 .recordGame_container {
     background-color: white;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    flex: 1;
 }
 
-.topPiece {
+.recordGame_topPiece {
     width: 100%;
     height: 8%;
 }
 
-.middlePiece {
+.recordGame_middlePiece {
     width: 90%;
     flex: 1;
     min-height: 100%;
@@ -22,7 +23,7 @@
     padding-bottom: 10px;
 }
 
-.header {
+.recordGame_header {
     width: 100%;
     max-height: 27px;
     display: flex;
@@ -32,7 +33,7 @@
     margin-bottom: 20px;
 }
 
-.return-icon {
+.recordGame_return-icon {
     font-size: 24px;
     color: #616161;
 }
@@ -47,7 +48,7 @@
     color: #616161;
 }
 
-.dropdown {
+.recordGame_dropdown {
     width: 45%;
     min-height: 50px;
     margin-top: 20px;
@@ -58,7 +59,7 @@
     font-size: 15px;
 }
 
-.matchNumber {
+.recordGame_matchNumber {
     width: 45%;
     font-size: 15px;
     min-height: 50px;
@@ -68,14 +69,14 @@
     border-radius: 10px;
 }
 
-.checkboxes {
+.recordGame_checkboxes {
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 
-.pointInput {
+.recordGame_pointInput {
     width: 75px;
     height: 40px;
     text-align: center;
@@ -84,7 +85,7 @@
     border-radius: 30px;
 }
 
-.pointContainer {
+.recordGame_pointContainer {
     width: 49%;
     height: 100px;
     display: flex;
@@ -94,9 +95,11 @@
     border: 2px solid lightgray;
     padding: 5px;
     border-radius: 5px;
+    gap: 1vh;
+
 }
 
-.submitButton {
+.recordGame_submitButton {
     width: 80px;
     height: 40px;
     background-color: #F27468;
@@ -109,12 +112,12 @@
     align-self: flex-end;
 }
 
-.submitButtonText {
+.recordGame_submitButtonText {
     color: white;
     font-size: 17px;
 }
 
-.detailInput {
+.recordGame_detailInput {
     width: 95%;
     font-size: 15px;
     min-height: 100px;
@@ -127,33 +130,33 @@
     resize: none;
 }
 
-.row {
+.recordGame_row {
     display: flex;
     flex-direction: row;
 }
 
-.column {
+.recordGame_column {
     display: flex;
     flex-direction: column;
 }
 
-.space-between {
+.recordGame_space-between {
     justify-content: space-between;
 }
 
-.gap-10 {
+.recordGame_gap-10 {
     gap: 10px;
 }
 
-.gap-20 {
+.recordGame_gap-20 {
     gap: 20px;
 }
 
-.marginTop20 {
+.recordGame_marginTop20 {
     margin-top: 20px;
 }
 
-.marginTop30 {
+.recordGame_marginTop30 {
     margin-top: 30px;
 }
 
@@ -162,5 +165,5 @@
     padding: 25px;
     padding-bottom: 130px;
     flex: 1;
-    overflow-x: hidden;
+    overflow-x: auto;
 }

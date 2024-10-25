@@ -53,16 +53,16 @@ export default function CreateProfile() {
     };
 
     return (
-        <div className="container">
+        <div className="createProfile_container">
             <div className="topPiece" />
-            <div className="middlePiece">
-                <div className="header">
+            <div className="createProfile_middlePiece">
+                <div className="createProfile_header">
                     <FaArrowLeft className="chevron-left" onClick={() => navigate(-1)} />
-                    <span className="headerText">Create Robot Profile</span>
+                    <span className="createProfile_headerText">Create Robot Profile</span>
                 </div>
-                <div className="scrollView">
+                <div className="createProfile_scrollView">
                     <span className="headerText">General Information</span>
-                    <div className="row">
+                    <div className="createProfile_row">
                         <div className="inputContainer">
                             <div>
                                 <input value={teamName} className="bigInput" placeholder="Team Name" onChange={e => setTeamName(e.target.value)} />
@@ -72,7 +72,7 @@ export default function CreateProfile() {
                             </div>
                             <div className="marginTop10">
                                 <span className="headerText">Drivebase</span>
-                                <select className="dropdown" value={drivebaseDropdown} onChange={e => {
+                                <select className="createProfile_dropdown" value={drivebaseDropdown} onChange={e => {
                                     setDrivebaseDropdown(e.target.value);
                                     setDrivebase(e.target.value);
                                 }}>
@@ -85,7 +85,7 @@ export default function CreateProfile() {
                             </div>
                             <div className="marginTop10">
                                 <span className="headerText">Intake</span>
-                                <select className="dropdown" value={intakeDropdown} onChange={e => {
+                                <select className="createProfile_dropdown" value={intakeDropdown} onChange={e => {
                                     setIntakeDropdown(e.target.value);
                                     setIntake(e.target.value);
                                 }}>
@@ -99,17 +99,17 @@ export default function CreateProfile() {
                             <div className="row space-between align-center">
                                 <div className="row align-center marginTop20">
                                     <input type="checkbox" checked={autonomous} onChange={e => setAutonomous(e.target.checked)} />
-                                    <span className="subText">Autonomous</span>
+                                    <span className="createProfile_subText">Autonomous</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="marginTop20">
-                        <span className="headerText">Additional Details</span>
-                        <textarea value={additionalDetails} className="detailInput" onChange={e => setAdditionalDetails(e.target.value)} />
+                        <span className="createProfile_headerText">Additional Details</span>
+                        <textarea value={additionalDetails} className="createProfile_detailInput" onChange={e => setAdditionalDetails(e.target.value)} />
                     </div>
-                    <button className="submitButton" onClick={submitProfile}>
-                        <span className="submitButtonText">Submit</span>
+                    <button className="createProfile_submitButton" onClick={submitProfile}>
+                        <span className="createProfile_submitButtonText">Submit</span>
                     </button>
                 </div>
             </div>
