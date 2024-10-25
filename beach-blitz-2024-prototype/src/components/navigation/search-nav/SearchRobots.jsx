@@ -41,7 +41,7 @@ export default function SearchRobots() {
     <div className="searchRobots_container">
       <div className="searchRobots_topPiece" />
       <div className="searchRobots_middlePiece">
-        <span className="header">Get Started Scouting</span>
+        <span className="searchRobots_header">Get Started Scouting</span>
         <div className="searchSection">
           <IonIcon name="search-outline" className="searchIcon"/>
           <input
@@ -59,7 +59,7 @@ export default function SearchRobots() {
                   <div
                     key={robot.profile.teamNumber}
                     onClick={() => handleProfileNavigation(robot.profile.teamNumber)}
-                    className="pressable"
+                    className="searchRobots_pressable"
                   >
                     <StatGlimpse
                       name={robot.profile?.teamName}

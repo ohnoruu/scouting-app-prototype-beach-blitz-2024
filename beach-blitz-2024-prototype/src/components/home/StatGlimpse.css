@@ -1,14 +1,14 @@
-.headerSmaller {
+.statGlimpse_headerSmaller {
     color: #616161;
     font-size: 14px;
   }
   
-  .text {
+  .statGlimpse_text {
     color: #616161;
     font-size: 12px;
   }
   
-  .scoutingDataGlimpsePiece {
+  .statGlimpse_scoutingDataGlimpsePiece {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,18 +18,18 @@
     border-bottom: 3px solid #d3d3d3;
   }
   
-  .metadata {
+  .statGlimpse_metadata {
     gap: 10px;
     max-width: 60%;
     flex-wrap: wrap;
   }
   
-  .fillerImage {
+  .statGlimpse_fillerImage {
     width: 120px;
     height: 100%;
   }
   
-  .greyBox {
+  .statGlimpse_greyBox {
     height: 0;
     background-color: #616161;
     transition: width 0.3s ease;

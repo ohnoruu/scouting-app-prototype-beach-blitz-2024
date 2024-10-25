@@ -21,17 +21,17 @@ export default function Launch() {
     }, [isLoading, navigate]);
 
     return (
-        <div className="container">
-            <div className="hero">
-                <img className="launchImage" alt="Robbie" src={robbie} />
-                <span className="header">ROBO SCOUTS</span>
+        <div className="launch_container">
+            <div className="launch_hero">
+                <img className="launch_launchImage" alt="Robbie" src={robbie} />
+                <span className="launch_header">ROBO SCOUTS</span>
             </div>
 
-            <div className="credits">
-                <span className="smallText">By Team 8521</span>
+            <div className="launch_credits">
+                <span className="launch_smallText">By Team 8521</span>
 
-                <div className="creditsImageBackground">
-                    <img className="creditsImage" alt="team logo 8521" src={logo} />
+                <div className="launch_creditsImageBackground">
+                    <img className="launch_creditsImage" alt="team logo 8521" src={logo} />
                 </div>
             </div>
         </div>

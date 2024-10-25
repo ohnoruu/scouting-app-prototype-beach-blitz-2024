@@ -29,25 +29,25 @@ export default function DeleteRobot() {
   };
 
   const displayData = robotList.map((robot) =>
-    <div key={robot.robotID} className="teamSelection" onClick={() => removeRobot(robot.profile.teamNumber)}>
-      <div className="teamName">
+    <div key={robot.robotID} className="deleteRobot_teamSelection" onClick={() => removeRobot(robot.profile.teamNumber)}>
+      <div className="deleteRobot_teamName">
         <span>{robot.profile.teamNumber} - {robot.profile.teamName}</span>
       </div>
-      <img src={tImg} className="teamImage" alt="Robot" />
+      <img src={tImg} className="deleteRobot_teamImage" alt="Robot" />
     </div>
   );
 
   return (
     <>
-      <div className="container">
-        <div className="topPiece" />
-        <div className="middlePiece">
-          <div className="titleContainer">
-              <FaArrowLeft onClick={() => navigate(-1)} className = "return-icon"/>
-            <span className="title">Select Robot to Delete</span>
+      <div className="deleteRobot_container">
+        <div className="deleteRobot_topPiece" />
+        <div className="deleteRobot_middlePiece">
+          <div className="deleteRobot_titleContainer">
+              <FaArrowLeft onClick={() => navigate(-1)} className = "deleteRobot_return-icon"/>
+            <span className="deleteRobot_title">Select Robot to Delete</span>
           </div>
-          <span className="subText">This action CANNOT BE UNDONE. DO NOT CLICK PROFILES YOU DO NOT WANT TO DELETE.</span>
-          <div className="robotListContainer">
+          <span className="deleteRobot_subText">This action CANNOT BE UNDONE. DO NOT CLICK PROFILES YOU DO NOT WANT TO DELETE.</span>
+          <div className="deleteRobot_robotListContainer">
             <Suspense fallback={<DeleteRobotSkeleton />}>
               {displayData}
             </Suspense>

@@ -1,4 +1,4 @@
-.container {
+.launch_container {
     background-color: #E1584B;
     width: 100%;
     display: flex;
@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.hero {
+.launch_hero {
     width: 100%;
     height: 100%;
     display: flex;
@@ -18,17 +18,17 @@
     top: 200px;
 }
 
-.launchImage {
+.launch_launchImage {
     width: 40%;
     height: 20%;
 }
 
-.header {
+.launch_header {
     font-size: 50px;
     color: white;
 }
 
-.credits {
+.launch_credits {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,7 +37,7 @@
     bottom: 30px;
 }
 
-.creditsImageBackground {
+.launch_creditsImageBackground {
     width: 50px;
     height: 50px;
     background-color: #3A3B3C;
@@ -47,12 +47,12 @@
     align-items: center;
 }
 
-.creditsImage {
+.launch_creditsImage {
     width: 40px;
     height: 40px;
 }
 
-.smallText {
+.launch_smallText {
     color: white;
     font-size: 20px;
 }

@@ -1,4 +1,4 @@
-.container {
+.settingsPanel_container {
     background-color: white;
     width: 100%;
     height: 100%;
@@ -7,13 +7,13 @@
     align-items: center;
   }
   
-  .topPiece {
+  .settingsPanel_topPiece {
     width: 100%;
     height: 8%;
     background-color: #E1584B;
   }
   
-  .middlePiece {
+  .settingsPanel_middlePiece {
     width: 90%;
     max-height: 84%;
     background-color: white;
@@ -25,14 +25,14 @@
     align-items: center;
   }
   
-  .titleContainer {
+  .settingsPanel_titleContainer {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
   
-  .title {
+  .settingsPanel_title {
     color: #616161;
     font-size: 17px;
   }
@@ -46,9 +46,9 @@
     font-size: 20px;
   }
   
-  .button {
+  .settingsPanel_button {
     min-width: 80%;
-    min-height: 7%;
+    min-height: 7vh;
     background-color: #E1584B;
     display: flex;
     justify-content: center;
@@ -58,7 +58,7 @@
     cursor: pointer;
   }
   
-  .buttonText {
+  .settingsPanel_buttonText {
     font-size: 20px;
     color: white;
   }

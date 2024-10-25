@@ -13,28 +13,28 @@ export default function Launch({ navigation }) {
     };
 
     return (
-        <div className="container">
-            <div className="topPiece" />
+        <div className="welcome_container">
+            <div className="welcome_topPiece" />
 
-            <div className="mainContent">
+            <div className="welcome_mainContent">
 
-                <div className="mainContentText">
-                    <span className="heroText">Welcome!</span>
-                    <span className="infoText">Record data about other teams, such as their drivebase, win/loss ratio, and more!</span>
+                <div className="welcome_mainContentText">
+                    <span className="welcome_heroText">Welcome!</span>
+                    <span className="welcome_infoText">Record data about other teams, such as their drivebase, win/loss ratio, and more!</span>
 
-                    <div className="continueButton" onClick={navigateToMain}>
+                    <div className="welcome_continueButton" onClick={navigateToMain}>
                         Get Started
                     </div>
                 </div>
             </div>
 
-            <div className="mainContentImage">
-                <img className="floor" alt="background" src={floor} />
-                <img className="robbie" alt="Robbie" src={robbie} />
+            <div className="welcome_mainContentImage">
+                <img className="welcome_floor" alt="background" src={floor} />
+                <img className="welcome_robbie" alt="Robbie" src={robbie} />
 
-                <div className="credits">
-                    <span className="creditsText">Robo Scouts was made for</span>
-                    <img className="FIRSTlogo" alt="FIRST logo" src={FIRSTlogo} />
+                <div className="welcome_credits">
+                    <span className="welcome_creditsText">Robo Scouts was made for</span>
+                    <img className="welcome_FIRSTlogo" alt="FIRST logo" src={FIRSTlogo} />
                 </div>
             </div>
         </div>

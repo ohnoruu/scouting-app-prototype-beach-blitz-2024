@@ -15,14 +15,14 @@ export default function PasswordPrompt() {
 
     return (
         <>
-            <div className="topPiece" />
+            <div className="passwordPrompt_topPiece" />
 
-            <div className="container">
-                <span className="title">Settings Panel</span>
+            <div className="passwordPrompt_container">
+                <span className="passwordPrompt_title">Settings Panel</span>
 
-                <span className="header">Admin Access Only</span>
+                <span className="passwordPrompt_header">Admin Access Only</span>
 
-                <div className="inputs">
+                <div className="passwordPrompt_inputs">
                     <input
                         className="inputText inputBox"
                         placeholder="Password"
@@ -31,8 +31,8 @@ export default function PasswordPrompt() {
                         type="password"
                     />
 
-                    <button className="submitButton" onClick={submitPassword}>
-                        <span className="submitText">Submit</span>
+                    <button className="passwordPrompt_submitButton" onClick={submitPassword}>
+                        <span className="passwordPrompt_submitText">Submit</span>
                     </button>
                 </div>
             </div>

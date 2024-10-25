@@ -12,21 +12,21 @@ export default function StatGlimpse({ name, teamNumber, drivebase, intake, isLoa
   }, [isLoading]);
 
   return (
-    <div className="scoutingDataGlimpsePiece">
-      <div className="metadata">
+    <div className="statGlimpse_scoutingDataGlimpsePiece">
+      <div className="statGlimpse_metadata">
         {isLoading ? (
-          <div className="greyBox" style={{ width: greyBoxWidth }} />
+          <div className="statGlimpse_greyBox" style={{ width: greyBoxWidth }} />
         ) : (
           <>
-            <span className="headerSmaller">{name} ({teamNumber})</span>
-            <div className="stats">
-              <span className="text">Intake: {intake} </span>
-              <span className="text"> | Drivebase: {drivebase}</span>
+            <span className="statGlimpse_headerSmaller">{name} ({teamNumber})</span>
+            <div className="statGlimpse_stats">
+              <span className="statGlimpse_text">Intake: {intake} </span>
+              <span className="statGlimpse_text"> | Drivebase: {drivebase}</span>
             </div>
           </>
         )}
       </div>
-      <img className="fillerImage" alt="filler" src={fillerImage} />
+      <img className="statGlimpse_fillerImage" alt="filler" src={fillerImage} />
     </div>
   );
 }
