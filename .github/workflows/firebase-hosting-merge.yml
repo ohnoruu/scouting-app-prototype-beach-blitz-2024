@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting on merge
 on:
   push:
     branches:
-      - main
+      - main  # Change this to your default branch if it's not 'main'
 
 jobs:
   build_and_deploy:
@@ -20,11 +20,11 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./beach-blitz-2024-prototype  # Ensure this points to the root of your project
+      working-directory: ./beach-blitz-2024-prototype  # Adjust this to your subdirectory
 
     - name: Build the project
       run: npm run build
-      working-directory: ./beach-blitz-2024-prototype  # Ensure this points to the root of your project
+      working-directory: ./beach-blitz-2024-prototype  # Adjust this to your subdirectory
 
     - name: Deploy to Firebase Hosting
       uses: FirebaseExtended/action-hosting-deploy@v0
@@ -33,4 +33,3 @@ jobs:
         firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEAM8521_SCOUTING_WEBAPP }}"
         channelId: live  # Use 'live' for production or 'preview' for preview channels
         projectId: team8521-scouting-webapp  # Replace with your Firebase project ID
-      working-directory: ./beach-blitz-2024-prototype  
