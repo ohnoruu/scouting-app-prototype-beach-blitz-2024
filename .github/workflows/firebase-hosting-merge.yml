@@ -20,11 +20,11 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./  # Ensure this points to the root of your project
+      working-directory: ./beach-blitz-2024-prototype  # Ensure this points to the root of your project
 
     - name: Build the project
       run: npm run build
-      working-directory: ./  # Ensure this points to the root of your project
+      working-directory: ./beach-blitz-2024-prototype  # Ensure this points to the root of your project
 
     - name: Deploy to Firebase Hosting
       uses: FirebaseExtended/action-hosting-deploy@v0
@@ -33,3 +33,4 @@ jobs:
         firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEAM8521_SCOUTING_WEBAPP }}"
         channelId: live  # Use 'live' for production or 'preview' for preview channels
         projectId: team8521-scouting-webapp  # Replace with your Firebase project ID
+      working-directory: ./beach-blitz-2024-prototype  

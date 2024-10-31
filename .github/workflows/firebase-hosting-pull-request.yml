@@ -1,0 +1,35 @@
+# https://github.com/firebase/firebase-tools
+
+name: Deploy to Firebase Hosting on PR
+on: pull_request
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+jobs:
+  build_and_preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Use the Node.js version your project requires
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./beach-blitz-2024-prototype  # Adjust this to your subdirectory
+
+      - name: Build the project
+        run: npm run build
+        working-directory: ./beach-blitz-2024-prototype  # Adjust this to your subdirectory
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEAM8521_SCOUTING_WEBAPP }}
+          projectId: team8521-scouting-webapp  # Replace with your Firebase project ID
+        working-directory: ./beach-blitz-2024-prototype  # Adjust this to your subdirectory
