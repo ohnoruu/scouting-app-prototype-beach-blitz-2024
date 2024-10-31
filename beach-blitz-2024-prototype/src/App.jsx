@@ -7,7 +7,6 @@ import Home from './components/navigation/Home.jsx';
 import Search from './components/navigation/Search.jsx';
 import Record from './components/navigation/Record.jsx';
 import Settings from './components/navigation/Settings.jsx';
-import CreateProfile from './components/navigation/record-nav/CreateProfile.jsx';
 
 export default function App() {
     return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import IonIcon from '@reacticons/ionicons'
 import './SettingsPanel.css';
 
 export default function SettingsPanel() {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import IonIcon from '@reacticons/ionicons'
 import { FaArrowLeft } from 'react-icons/fa';
 import Counter from '../../record/Counter.jsx';
 import CheckRecord from '../../record/CheckRecord.jsx';

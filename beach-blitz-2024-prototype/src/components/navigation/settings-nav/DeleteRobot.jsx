@@ -2,7 +2,6 @@ import React, { Suspense, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DeleteRobotSkeleton from '../../settings/DeleteRobotSkeleton';
 import { FaArrowLeft } from 'react-icons/fa';
-import IonIcon from '@reacticons/ionicons'
 import axios from 'axios';
 import './DeleteRobot.css';
 

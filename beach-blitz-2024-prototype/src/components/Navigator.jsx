@@ -1,7 +1,6 @@
 //Navigation Bar
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink, Outlet } from 'react-router-dom';
-import { Home, Search, Record, Settings } from '../index.js';
+import { BrowserRouter as NavLink, Outlet } from 'react-router-dom';
 import IonIcon from '@reacticons/ionicons';
 import './Navigator.css';
 

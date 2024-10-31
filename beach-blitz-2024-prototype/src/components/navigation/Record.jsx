@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Routes, Route } from 'react-router-dom';
 
 import CreateProfile from './record-nav/CreateProfile';
 import RecordGame from './record-nav/RecordGame';
