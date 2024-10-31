@@ -15,7 +15,7 @@ export default function SelectProfile() {
   const [profileData, setProfileData] = useState();
 
   useEffect(() => {
-    axios.get('http://localhost:3000/robotList')
+    axios.get('http://bckend.team8521.com/robotList')
       .then((response) => {
         setProfileData(response.data);
       })

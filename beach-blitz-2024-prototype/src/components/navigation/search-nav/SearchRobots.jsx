@@ -17,7 +17,7 @@ export default function SearchRobots() {
   }
   
   useEffect(() => {
-    axios.get('http://localhost:3000/robotList')
+    axios.get('http://bckend.team8521.com/robotList')
       .then((response) => {
         setGenData(response.data);
         setFilteredData(response.data); // Initialize filtered data with all data
