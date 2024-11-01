@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import PasswordPrompt from './settings-nav/PasswordPrompt';
 import SettingsPanel from './settings-nav/SettingsPanel';
