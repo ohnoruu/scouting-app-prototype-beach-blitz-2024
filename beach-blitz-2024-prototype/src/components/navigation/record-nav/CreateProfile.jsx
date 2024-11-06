@@ -44,7 +44,7 @@ export default function CreateProfile() {
         };
 
         try {
-            await axios.post('http://localhost:3000/addProfile', profileData);
+            await axios.post('https://cyberlions-web-server-1028328220227.us-central1.run.app/addProfile', profileData);
         } catch (error) {
             console.error('Error making a POST request:', error);
         }

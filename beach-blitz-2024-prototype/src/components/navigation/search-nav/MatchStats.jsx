@@ -13,7 +13,7 @@ export default function MatchStats() {
 
     useEffect(() => {
         if (teamNumber) {
-            axios.get(`http://localhost:3000/getRobot/${teamNumber}`)
+            axios.get(`https://cyberlions-web-server-1028328220227.us-central1.run.app/getRobot/${teamNumber}`)
                 .then((response) => {
                     setRobotProfileData(response.data);
                 })

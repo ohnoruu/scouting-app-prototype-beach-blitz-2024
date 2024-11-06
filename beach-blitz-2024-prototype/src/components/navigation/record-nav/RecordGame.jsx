@@ -49,7 +49,7 @@ export default function RecordGame() {
         };
 
         try {
-            await axios.post(`http://localhost:3000/addMatch/${teamNumber}`, matchData);
+            await axios.post(`https://cyberlions-web-server-1028328220227.us-central1.run.app/addMatch/${teamNumber}`, matchData);
         } catch (error) {
             console.error('Error making a POST request:', error);
         }

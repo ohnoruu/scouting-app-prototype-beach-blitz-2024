@@ -17,7 +17,7 @@ export default function SearchRobots() {
   }
   
   useEffect(() => {
-    axios.get('http://localhost:3000/robotList')
+    axios.get('https://cyberlions-web-server-1028328220227.us-central1.run.app/robotList')
       .then((response) => {
         setGenData(response.data);
         setFilteredData(response.data); // Initialize filtered data with all data

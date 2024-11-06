@@ -15,7 +15,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/robotList') 
+    axios.get('https://cyberlions-web-server-1028328220227.us-central1.run.app/robotList') 
       .then((response) => {
         alterRobotList(response.data);
       })
